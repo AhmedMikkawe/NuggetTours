@@ -127,6 +127,22 @@ body,
   }
 }
 /*Medium ≥768px*/
+/*Page Content*/
+.page-title {
+  font-size: 25dvw;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../img/title-bg-2.webp),
+    url(../img/title-bg-2-reduced.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+}
 
 /*Footer*/
 .footer {
