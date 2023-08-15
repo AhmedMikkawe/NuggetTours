@@ -1,0 +1,127 @@
+/*Global*/
+:root {
+  --primary-color: #fda50f;
+  --secondary-color: #303131;
+}
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/*Utilities*/
+.primary-color {
+  color: var(--primary-color);
+}
+.primary-bg {
+  background-color: var(--primary-color);
+}
+.second-color {
+  color: var(--secondary-color);
+}
+.second-bg {
+  background-color: var(--secondary-color);
+}
+/*Header*/
+.header {
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 10px 5px;
+}
+.toggle-menu {
+  display: none;
+}
+.toggle-menu img {
+  width: 50px;
+  height: 50px;
+}
+.nav__list {
+  display: flex;
+  gap: 20px;
+}
+.nav__list-item {
+  border-radius: 2px;
+  list-style-type: none;
+  padding: 5px 10px;
+  width: 120px;
+}
+.nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+.nav__icon {
+  width: 50px;
+  height: 50px;
+}
+.nav__name {
+  color: var(--secondary-color);
+  z-index: -1;
+  font-weight: 900;
+}
+.nav__list-item:hover .nav__name {
+  color: var(--primary-color);
+  animation: nav-link-animate 0.3s ease-in;
+}
+@keyframes nav-link-animate {
+  from {
+    opacity: 0;
+    translate: -25px;
+  }
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+/*Small <576px */
+@media screen and (max-width: 576px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+  }
+  .toggle-menu {
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    align-self: flex-end;
+  }
+  .nav__list {
+    flex-direction: column;
+  }
+  .nav__list--mobile {
+    height: 0px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in;
+  }
+  .nav__list--mobile.show {
+    opacity: 1;
+    height: auto;
+  }
+  .nav__list-item {
+    width: 100%;
+  }
+  .nav__list-item:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-color);
+  }
+  .nav__link {
+    justify-content: flex-start;
+  }
+  .nav__name {
+    opacity: 1;
+    translate: 0;
+    color: var(--secondary-color);
+  }
+  .nav__list-item:hover .nav__name {
+    color: var(--primary-color);
+  }
+}
+/*Medium ≥768px*/
