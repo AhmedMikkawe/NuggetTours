@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <script
@@ -17,6 +21,8 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" defer></script>
+
     <script src="main.js" defer></script>
     <title>Document</title>
   </head>
@@ -76,6 +82,100 @@
     </header>
     <div class="page-content">
       <h1 class="page-title">Hotels</h1>
+    </div>
+    <div class="container">
+      <form class="search-form" action="">
+        <fieldset class="field-set">
+          <legend class="legend">Destination Info</legend>
+          <div class="search-form__inputs">
+            <div class="auto-complete search-form-inputs__input">
+              <label class="search-form-inputs-input__label" for="dest"
+                >Destination</label
+              >
+              <input
+                type="text"
+                id="dest"
+                name="dest"
+                placeholder="Destination Name"
+                aria-label="Destination Name"
+              />
+            </div>
+            <div class="auto-complete search-form-inputs__input">
+              <label class="search-form-inputs-input__label" for="hotel"
+                >Hotel</label
+              >
+              <input
+                type="text"
+                id="hotel"
+                name="hotel"
+                placeholder="Hotel Name"
+                aria-label="Hotel Name"
+              />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset class="field-set">
+          <legend class="legend">Period</legend>
+          <div class="search-form__inputs">
+            <div class="search-form-inputs__input">
+              <label for="check-in" class="search-form-inputs-input__label">
+                Check in
+              </label>
+              <input
+                type="text"
+                id="check-in"
+                name="check-in"
+                aria-label="check in date"
+              />
+            </div>
+            <div class="search-form-inputs__input">
+              <label for="check-out" class="search-form-inputs-input__label">
+                Check Out
+              </label>
+              <input
+                type="text"
+                id="check-out"
+                name="check-out"
+                aria-label="check out date"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="select-label" for="nights">Nights</label>
+            <select name="nights" id="nights" aria-label="Count of nights">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </fieldset>
+        <div class="search-form__inputs">
+          <div class="auto-complete search-form-inputs__input --nationality">
+            <label
+              class="--nationality__label"
+              for="nationality"
+              aria-hidden="true"
+            >
+              <img src="img/eg.png" alt="" />
+            </label>
+            <input
+              type="text"
+              id="nationality"
+              name="nationality"
+              placeholder="Nationality"
+              aria-label="Your Nationality"
+            />
+          </div>
+          <button type="submit" class="search">Search</button>
+        </div>
+      </form>
     </div>
     <footer class="footer second-bg">
       <div class="container">

@@ -129,6 +129,7 @@ body,
 /*Medium ≥768px*/
 /*Page Content*/
 .page-title {
+  position: relative;
   font-size: 25dvw;
   font-weight: 900;
   text-transform: uppercase;
@@ -143,11 +144,125 @@ body,
   background-attachment: fixed;
   background-position: center center;
 }
-
+.page-title::after {
+  content: "HOTELS";
+  text-shadow: 0px 0px 50px var(--primary-color);
+  color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.search-form {
+  padding: 20px;
+  background-color: #f0ebe4;
+  border-radius: 3px;
+  border: 0.5px solid var(--primary-color);
+}
+.field-set {
+  padding: 10px 20px;
+  margin-top: 25px;
+}
+.legend {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 5px;
+  width: 150px;
+}
+.search-form__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.search-form-inputs-input__label {
+  display: block;
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 10px;
+  position: relative;
+  top: 32px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.search-form-inputs__input {
+  min-width: 48%;
+}
+.search-form__inputs input[type="text"] {
+  padding: 5px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  position: relative;
+  z-index: 2;
+}
+.search-form__inputs input[type="text"]::placeholder {
+  color: var(--secondary-color);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+.search-form__inputs input[type="text"]:focus {
+  border-bottom: 2px solid var(--primary-color);
+}
+.search-form-inputs-input__label:has(
+    + input[type="text"]:not(:placeholder-shown)
+  ) {
+  top: 0;
+  opacity: 1;
+}
+.select-label {
+  background-color: var(--secondary-color);
+  padding: 10px;
+  color: #fff;
+  display: inline-block;
+}
+.select-label + select {
+  padding: 10px;
+  width: 100px;
+}
+.ui-menu-item-wrapper.ui-state-active {
+  background-color: var(--primary-color);
+}
+.--nationality {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.--nationality__label {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 5px;
+}
+.search {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  margin-top: 15px;
+}
+/*Small <576px */
+@media screen and (max-width: 576px) {
+  .search-form-inputs-input__label {
+    top: 0;
+    opacity: 1;
+  }
+  .search-form-inputs__input {
+    width: 100%;
+  }
+}
 /*Footer*/
 .footer {
   color: #fff;
   padding: 20px 0;
+  margin-top: 50px;
 }
 .footer__column {
   min-width: 30%;
